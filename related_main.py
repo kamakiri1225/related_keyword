@@ -66,7 +66,7 @@ options.add_argument('--headless')
 for i in range(len(keyword_list)):
     # keyword
     keyword = keyword_list[i]
-    file_make = f'{PWD}\{keyword}' #ファイルを作成
+    file_make = rf'{PWD}\{keyword}' #ファイルを作成
     if not os.path.exists(file_make):
         os.mkdir(file_make)
         
@@ -131,9 +131,9 @@ import glob
 
 for keyword in keyword_list:
     # csvファイルのリスト
-    csvfules_list = glob.glob(rf"./{keyword}/*.csv", recursive=False)
-    with pd.ExcelWriter(fr'./{keyword}/000_{keyword}_matome.xlsx') as writer:
+    csvfules_list = glob.glob(rf"./{keyword}\*.csv", recursive=False)
+    with pd.ExcelWriter(rf'./{keyword}\000_{keyword}_matome.xlsx') as writer:
         for i, csv_file in enumerate(csvfules_list):
-            df = pd.read_csv(fr'./{csv_file}', encoding='UTF16', sep='\t')
+            df = pd.read_csv(rf'./{csv_file}', encoding='UTF16', sep='\t')
             df.to_excel(writer, sheet_name=f'{keyword}{i}')
 print('='*10, '終了','='*10)
