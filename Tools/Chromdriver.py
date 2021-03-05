@@ -3,7 +3,6 @@ from selenium.webdriver.common.keys import Keys # seleniumでEnterキーを送�
 from selenium.webdriver.chrome.options import Options # seleniumでヘッドレスモードを指定するためにimport
 import time # 待ち時間を指定するためにtimeをimport
 import os
-import json
 
 class Chromdriver:
     def __init__(self, keyword_path):
