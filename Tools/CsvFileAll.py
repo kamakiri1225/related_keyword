@@ -3,8 +3,8 @@ import glob
 
 class CsvFileAll: # キーワードをまとめる    
     def __init__(self, keyword):
-        print('='*10, 'ファイルまとめ作成','='*10)
         self.keyword = keyword
+        print('='*10, f'{self.keyword}:ファイルまとめ作成','='*10)
 
     def file_all(self):
         # csvファイルのリスト
